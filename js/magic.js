@@ -15,6 +15,30 @@ $(document).ready(function () {
 
     getOutput();
 
+    function receiveMessage(event) {
+            console.log(event.type);
+            if (AYAH.isIframeCommSupported()) {
+                // Defines which events to listen for
+                // and which functions to call when those events occur
+                AYAH.addGameStartHandler(handleEvent);
+                AYAH.addGameCompleteHandler(handleEvent);
+            } else {
+                // Defines what happens if postMessage() is not supported
+                alert("iframe communication is not supported!");
+            }
+        }
+        // Declares the function to handle the events
+        function handleEvent(e) {
+            // Defines what happens when an event occurs
+            //  alert(e.type);
+            console.log(e.type);
+        }
+
+    
+    window.addEventListener("message", receiveMessage, false);
+
+
+
     // process the form
     $('form').submit(function (event) {
         console.log("submit form");
