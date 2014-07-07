@@ -1,5 +1,7 @@
 $(document).ready(function () {
 
+
+    //We Want delay because of AreUaHuman WebService loading time
     $.blockUI({
         css: {
             border: 'none',
@@ -13,33 +15,34 @@ $(document).ready(function () {
         message: '<H3>Wait human,page is loading....</H3>',
     });
 
+    //Invoking PHP
     getOutput();
 
     function receiveMessage(event) {
-            console.log(event.type);
-            if (AYAH.isIframeCommSupported()) {
-                // Defines which events to listen for
-                // and which functions to call when those events occur
-                AYAH.addGameStartHandler(handleEvent);
-                AYAH.addGameCompleteHandler(handleEvent);
-            } else {
-                // Defines what happens if postMessage() is not supported
-                alert("iframe communication is not supported!");
-            }
+        console.log(event.type);
+        if (AYAH.isIframeCommSupported()) {
+            // Defines which events to listen for
+            // and which functions to call when those events occur
+            AYAH.addGameStartHandler(handleEvent);
+            AYAH.addGameCompleteHandler(handleEvent);
+        } else {
+            // Defines what happens if postMessage() is not supported
+            alert("iframe communication is not supported!");
         }
-        // Declares the function to handle the events
-        function handleEvent(e) {
-            // Defines what happens when an event occurs
-            //  alert(e.type);
-            console.log(e.type);
-        }
+    }
 
-    
+    // Declares the function to handle the events
+    function handleEvent(e) {
+        // Defines what happens when an event occurs
+        //  alert(e.type);
+        console.log(e.type);
+    }
+
+
     window.addEventListener("message", receiveMessage, false);
 
 
-
-    // process the form
+    // When The form
     $('form').submit(function (event) {
         console.log("submit form");
         // get the form data
@@ -99,7 +102,6 @@ function drawError() {
 function drawOutput(responseText) {
     $('#output').html(responseText);
     setTimeout($.unblockUI, 2000);
-
 }
 
 // Declares the function to handle the events
@@ -198,15 +200,4 @@ function getRequest(url, success, error) {
 //    }
 //}
 
-function dolistener() {
-    if (AYAH.isIframeCommSupported()) {
-        // Defines which events to listen for
-        // and which functions to call when those events occur
-        AYAH.addGameStartHandler(handleEvent);
-        AYAH.addGameCompleteHandler(handleEvent);
-    } else {
-        // Defines what happens if postMessage() is not supported
-        alert("iframe communication is not supported!");
-    }
-}
 

@@ -10,7 +10,7 @@
  * http://jquery.org/license
  *
  * Date: 2014-06-25T18:02Z
- */
+ **/
 
 (function( global, factory ) {
 
