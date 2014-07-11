@@ -280,8 +280,12 @@ if (!class_exists('AYAH')):
 
                 $result = '';
                 $errno = $errstr = "";
-                $fs = fsockopen("ssl://" . $hostname, 443, $errno, $errstr, 10);
-//                $fs = fsockopen("fr253x-prxwe01.sgt.saint-gobain.net", 8084, $errno, $errstr, 10);
+
+//                if (SGG_PROXY != '') {
+                $fs = fsockopen("fr253x-prxwe01.sgt.saint-gobain.net", 8084, $errno, $errstr, 10);
+//                } else {
+//                    $fs = fsockopen("ssl://" . $hostname, 443, $errno, $errstr, 10);
+//                }
                 if (false == $fs) {
                     $this->__log("ERROR", __FUNCTION__, "Could not open socket");
                 } else {

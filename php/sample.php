@@ -18,7 +18,7 @@ if (!empty($_POST)) {
         echo "Hello " . $_POST['name'] . ", You NOT are a human!";
     }
 } else {
-//Echoing HTML renderer
+
     echo $ayah->getPublisherHTML();
 }
 ?>
