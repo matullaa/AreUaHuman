@@ -1,5 +1,10 @@
 <!DOCTYPE html>
 <html>
+<!--
+@ This page is a POC in order to test AreUaHuman tool to replace CAPTCHA
+@ As SAP is not convenient to execute PHP the PHP lib will be hosted in a external APACHE Web Server
+@ All PHP posting are done via XHR with javascript in Magic.js file
+-->
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=10">
 
@@ -9,16 +14,16 @@
     <script type="text/javascript" src="js/magic.js"></script>
     <script type="text/javascript" src="js/jquery.blockUI.js"></script>
 
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!--<link rel="stylesheet" href="css/bootstrap.min.css">-->
 
 </head>
 
 <body>
-<form method="post" action="php/sample.php" name="myform">
+<form method="post" action="sample.php" name="form">
     <p>Please enter your name: <input type="text" name="name"/></p>
 
     <div id="output"> waiting for action</div>
-    <button type="submit" class="btn btn-success" name="my_submit_button_name">Submit <span
+    <button disabled type="submit" class="btn btn-success" name="submit_AYAH" id="submit_AYAH">Submit <span
             class="fa fa-arrow-right"></span></button>
 </form>
 
