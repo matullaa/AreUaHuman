@@ -306,7 +306,7 @@ if (!class_exists('AYAH')):
             return $result;
         }
 
-        // Internal function: does a JSON decode of the string
+        // Internal function: does a JSON decode of the string !
         protected function doJSONArrayDecode($string)
         {
             $result = array();
