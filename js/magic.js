@@ -8,8 +8,12 @@ $(document).ready(function () {
             backgroundColor: '#f69211',
             '-webkit-border-radius': '10px',
             '-moz-border-radius': '10px',
-            opacity: .5
-//            color: '#f69211'
+            opacity: 1.5
+//            centerY: 0,
+//            centerX: 0,
+//            top: '500px',
+//            left: '450px',
+//            right: '10px'
         },
         message: '<H3>Wait human,page is loading....</H3>'
     });
@@ -25,32 +29,32 @@ $(document).ready(function () {
     }
 
     // process the form
-    $('form').submit(function (event) {
-//        console.log("submit form");
-        // get the form data
-        // there are many ways to get this data using jQuery (you can use the class or id also)
-        var formData = {
-            'name': $('input[name=name]').val(),
-            'session_secret': $('input[name=session_secret]').val()
-        };
+//    $('form').submit(function (event) {
+////        console.log("submit form");
+//        // get the form data
+//        // there are many ways to get this data using jQuery (you can use the class or id also)
+//        var formData = {
+//            'name': $('input[name=name]').val(),
+//            'session_secret': $('input[name=session_secret]').val()
+//        };
 
-        // process the form
-        $.ajax({
-            type: 'POST', // define the type of HTTP verb we want to use (POST for our form)
-            url: 'http://10.139.55.214/badHuman/php/sample.php', // the url where we want to POST
-            data: formData, // our data object
-            dataType: 'html', // what type of data do we expect back from the server
-            encode: true
-        })
-            // using the done promise callback
-            .done(function (data) {
-                alert(data);
-            });
+    // process the form
+//        $.ajax({
+//            type: 'POST', // define the type of HTTP verb we want to use (POST for our form)
+//            url: 'http://10.139.55.214/badHuman/php/sample.php', // the url where we want to POST
+//            data: formData, // our data object
+//            dataType: 'html', // what type of data do we expect back from the server
+//            encode: true
+//        })
+//            // using the done promise callback
+//            .done(function (data) {
+//                alert(data);
+//            });
 
-        // stop the form from submitting the normal way and refreshing the page
-        event.preventDefault();
-        document.getElementById("submit_AYAH").disabled = true;
-    });
+    // stop the form from submitting the normal way and refreshing the page
+//        event.preventDefault();
+//        document.getElementById("submit_AYAH").disabled = true;
+//    });
 });
 
 function receiveMessage(event) {

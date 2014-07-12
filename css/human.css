@@ -5,8 +5,7 @@ a, abbr, acronym, address, big, cite, code,
 del, dfn, em, font, img, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var,
 b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
+dl, dt, dd, ol, ul, li, fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td {
     margin: 0;
     padding: 0;
@@ -37,6 +36,12 @@ h2 {
 
 h3 {
     font-size: 18px;
+    /*color: #ffffff;*/
+}
+
+.blockUI > h3 {
+    font-size: 18px;
+    color: #ffffff;
 }
 
 h4 {
@@ -47,7 +52,6 @@ h5 {
     font-size: 13px;
     font-style: italic;
     text-align: center;
-    /*color : #f5be2f;*/
 }
 
 h6 {
@@ -206,7 +210,7 @@ form:after {
     position: relative;
     text-align: center;
     text-shadow: 0 1px 0 #fff;
-    width: 600px;
+    width: 500px;
     height: 500px;
 }
 
@@ -255,7 +259,7 @@ form:after {
     background: -o-linear-gradient(top, rgba(248, 248, 248, 1) 0%, rgba(249, 249, 249, 1) 100%);
     background: -ms-linear-gradient(top, rgba(248, 248, 248, 1) 0%, rgba(249, 249, 249, 1) 100%);
     background: linear-gradient(top, rgba(248, 248, 248, 1) 0%, rgba(249, 249, 249, 1) 100%);
-    ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f8f8f8', endColorstr='#f9f9f9', GradientType=0);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f8f8f8', endColorstr='#f9f9f9', GradientType=0);
     border: 1px solid #061d74;
     content: "";
     display: block;
@@ -271,7 +275,7 @@ form:after {
     -ms-transform: rotate(2deg);
     -o-transform: rotate(2deg);
     transform: rotate(2deg);
-    ms-filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
     top: 0;
     z-index: -1;
 }
@@ -282,7 +286,7 @@ form:after {
     -ms-transform: rotate(-3deg);
     -o-transform: rotate(-3deg);
     transform: rotate(-3deg);
-    ms-filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
     top: 0;
     z-index: -2;
 }
@@ -316,6 +320,7 @@ form:after {
     margin: 0 0 10px;
     padding: 15px 10px 15px 40px;
     width: 80%;
+
 }
 
 #content form input[type="email"] {
@@ -343,28 +348,28 @@ form:after {
     width: 80%;
 }
 
-#content form input[type="text"]:focus,
-#content form input[type="password"]:focus {
-    -webkit-box-shadow: 0 0 2px #ed1c24 inset;
-    -moz-box-shadow: 0 0 2px #ed1c24 inset;
-    -ms-box-shadow: 0 0 2px #ed1c24 inset;
-    -o-box-shadow: 0 0 2px #ed1c24 inset;
-    box-shadow: 0 0 2px #ed1c24 inset;
-    background-color: #fff;
-    border: 1px solid #ed1c24;
-    outline: none;
-}
+/*#content form input[type="text"]:focus,*/
+/*#content form input[type="password"]:focus {*/
+/*-webkit-box-shadow: 0 0 2px #ed1c24 inset;*/
+/*-moz-box-shadow: 0 0 2px #ed1c24 inset;*/
+/*-ms-box-shadow: 0 0 2px #ed1c24 inset;*/
+/*-o-box-shadow: 0 0 2px #ed1c24 inset;*/
+/*box-shadow: 0 0 2px #ed1c24 inset;*/
+/*background-color: #fff;*/
+/*border: 1px solid #ed1c24;*/
+/*outline: none;*/
+/*}*/
 
-#content form input[type="email"]:focus {
-    -webkit-box-shadow: 0 0 2px #ed1c24 inset;
-    -moz-box-shadow: 0 0 2px #ed1c24 inset;
-    -ms-box-shadow: 0 0 2px #ed1c24 inset;
-    -o-box-shadow: 0 0 2px #ed1c24 inset;
-    box-shadow: 0 0 2px #ed1c24 inset;
-    background-color: #fff;
-    border: 1px solid #ed1c24;
-    outline: none;
-}
+/*#content form input[type="email"]:focus {*/
+/*-webkit-box-shadow: 0 0 2px #ed1c24 inset;*/
+/*-moz-box-shadow: 0 0 2px #ed1c24 inset;*/
+/*-ms-box-shadow: 0 0 2px #ed1c24 inset;*/
+/*-o-box-shadow: 0 0 2px #ed1c24 inset;*/
+/*box-shadow: 0 0 2px #ed1c24 inset;*/
+/*background-color: #fff;*/
+/*border: 1px solid #ed1c24;*/
+/*outline: none;*/
+/*}*/
 
 #username {
     background-position: 10px 10px !important
@@ -466,40 +471,6 @@ form:after {
     color: #00aeef;
 }
 
-.modalDialog {
-    position: fixed;
-    opacity: 1;
-    font-family: Arial, Helvetica, sans-serif;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background: rgba(0, 0, 0, 0.8);
-    z-index: 99999;
-    opacity: 0;
-    -webkit-transition: opacity 400ms ease-in;
-    -moz-transition: opacity 400ms ease-in;
-    transition: opacity 400ms ease-in;
-    pointer-events: none;
-}
-
-.modalDialog:target {
-    opacity: 1;
-    pointer-events: auto;
-}
-
-.modalDialog > div {
-    width: 400px;
-    position: relative;
-    margin: 10% auto;
-    padding: 5px 20px 13px 20px;
-    border-radius: 10px;
-    background: #fff;
-    background: -moz-linear-gradient(#fff, #999);
-    background: -webkit-linear-gradient(#fff, #999);
-    background: -o-linear-gradient(#fff, #999);
-}
-
 .logo-SGG {
     margin-top: 10px;
     width: 240px;
@@ -514,30 +485,28 @@ form:after {
     width: 100%;
 }
 
-div.left {
-    /*background: darkslateblue;*/
-    border: double 3px #f69211;
-    text-align: center;
-    background: transparent;
-    padding: 250px 50px 150px 50px;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    border-radius: 5px;
-    margin-left: 170px;
-    height: 100px;
-}
-
 div.right {
     background: url(../images/saint-gobain.png) no-repeat;
-    padding: 250px 50px 150px 50px;
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
     border-radius: 5px;
-    margin-right: 90px;
+    margin-right: 110px;
     margin-top: 50px;
-    height: 150px;
-    width: 100px;
+    height: 500px;
+    width: 120px;
+    float: right;
+}
 
+div.left {
+    background: url(../images/saint-gobain_180.png) no-repeat;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    margin-top: 50px;
+    margin-left: 80px;
+    height: 500px;
+    width: 120px;
+    /*float: left;*/
 }
 
 #text {
@@ -546,7 +515,16 @@ div.right {
     letter-spacing: -0.05em;
     position: absolute;
     text-align: center;
+    /*margin-top: 20px;*/
     -moz-transform: translateX(-50%) translateY(-50%) rotate(-90deg);
     -webkit-transform: translateX(-50%) translateY(-50%) rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
     transform: translateX(-50%) translateY(-50%) rotate(-90deg);
+}
+
+.footer {
+    text-align: center;
+    color: #ffffff;
+    font-style: italic;
 }
